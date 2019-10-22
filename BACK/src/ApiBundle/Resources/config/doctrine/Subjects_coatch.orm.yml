@@ -1,0 +1,34 @@
+ApiBundle\Entity\Subjects_coatch:
+    type: entity
+    table: subjects_coatch
+    manyToOne:
+      CoatchUsers:
+        targetEntity: Users
+        inversedBy: UsersCoatch
+        joinColumn:
+            name: coatch_id
+            referencedColumnName: id
+      CoatchSubjects:
+        targetEntity: Subjects
+        inversedBy: SubjectCoatchs
+        joinColumn:
+            name: subject_id
+            referencedColumnName: id
+    repositoryClass: ApiBundle\Repository\Subjects_coatchRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks:
+        prePersist: [ insertCreatedAtAuto, insertUpdateAtAuto ]
+    fields:
+        active:
+            type: boolean
+            option:
+                defaults: 1
+        created_at:
+            type: datetime
+        update_at:
+            type: datetime

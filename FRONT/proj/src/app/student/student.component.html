@@ -1,0 +1,133 @@
+<mat-card >
+
+    <h2 >liste de mes équipes</h2 >
+
+    <mat-list role="list" >
+
+        <mat-list-item role="listitem" >
+            super titi
+
+            <button mat-button (click)="openEditTeamDialog()" >éditer l'équipe</button >
+        </mat-list-item >
+
+        <mat-list-item role="listitem" >
+            lockness bitch
+
+            <button mat-button (click)="openEditTeamDialog()" >éditer l'équipe</button >
+        </mat-list-item >
+
+        <mat-list-item role="listitem" >
+            chorizo enterprise
+
+            <button mat-button (click)="openEditTeamDialog()" >éditer l'équipe</button >
+        </mat-list-item >
+
+    </mat-list >
+
+</mat-card>
+
+<mat-divider></mat-divider>
+
+<mat-card >
+
+    <h2 >liste des projets en cours</h2 >
+
+    <mat-accordion >
+        <mat-expansion-panel >
+
+            <mat-expansion-panel-header >
+                <mat-panel-title >
+                    super projet workshop 2 2018
+                </mat-panel-title >
+            </mat-expansion-panel-header >
+
+            <h2 >
+                liste des sujets associés au projet
+
+                <button mat-button (click)="openNewSubjectDialog()" >Créer un sujet</button >
+            </h2 >
+
+            <mat-list role="list" >
+
+                <mat-list-item role="listitem" >
+                    #1 - appli android
+
+                    <button mat-button (click)="openNewTeamDialog()" >Inscrire une équipe</button >
+                </mat-list-item >
+
+                <mat-list-item role="listitem" >
+                    #2 - appli iphone
+
+                    <button mat-button (click)="openNewTeamDialog()" >Inscrire une équipe</button >
+                </mat-list-item >
+
+                <mat-list-item role="listitem" >
+                    #3 - appli web
+
+                    <button mat-button (click)="openNewTeamDialog()" >Inscrire une équipe</button >
+                </mat-list-item >
+
+            </mat-list >
+
+        </mat-expansion-panel >
+
+    </mat-accordion >
+
+
+</mat-card >
+
+
+<!--
+<h2 >My friends : </h2 >
+<ul class="students" >
+    <li *ngFor="let student of myfriends" (click)="onSelect(student)" [class.selected]="student === selectedStudent" >
+        <span class="badge" >{{student.id}}</span > {{student.firstname}}
+    </li >
+</ul >
+
+<mat-card *ngIf="selectedStudent" >
+
+    <form class="example-form" >
+
+        <mat-form-field class="example-full-width" >
+            <input
+                matInput
+                placeholder="prénom"
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="selectedStudent.firstname" >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <input
+                matInput
+                placeholder="nom"
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="selectedStudent.lastname" >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <input
+                matInput
+                type="email"
+                placeholder="email"
+                [(ngModel)]="selectedStudent.email"
+                [ngModelOptions]="{standalone: true}" >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <mat-select
+                placeholder="rôle"
+                [(value)]="selectedStudent.role" >
+
+                <mat-option
+                    [(value)]="role.value"
+                    *ngFor="let role of roles" >
+                    {{ role.viewValue }}
+                </mat-option >
+
+            </mat-select >
+        </mat-form-field >
+
+    </form >
+
+</mat-card >-->

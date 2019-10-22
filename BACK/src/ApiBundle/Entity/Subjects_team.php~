@@ -1,0 +1,83 @@
+<?php
+
+namespace ApiBundle\Entity;
+
+/**
+ * Subjects_team
+ */
+class Subjects_team
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @var \ApiBundle\Entity\Team_details
+     */
+    private $SubjectTeam;
+
+
+    /**
+     * Set subjectTeam
+     *
+     * @param \ApiBundle\Entity\Team_details $subjectTeam
+     *
+     * @return Subjects_team
+     */
+    public function setSubjectTeam(\ApiBundle\Entity\Team_details $subjectTeam = null)
+    {
+        $this->SubjectTeam = $subjectTeam;
+
+        return $this;
+    }
+
+    /**
+     * Get subjectTeam
+     *
+     * @return \ApiBundle\Entity\Team_details
+     */
+    public function getSubjectTeam()
+    {
+        return $this->SubjectTeam;
+    }
+    /**
+     * @var \ApiBundle\Entity\Subjects
+     */
+    private $TeamSubjectDetails;
+
+
+    /**
+     * Set teamSubjectDetails
+     *
+     * @param \ApiBundle\Entity\Subjects $teamSubjectDetails
+     *
+     * @return Subjects_team
+     */
+    public function setTeamSubjectDetails(\ApiBundle\Entity\Subjects $teamSubjectDetails = null)
+    {
+        $this->TeamSubjectDetails = $teamSubjectDetails;
+
+        return $this;
+    }
+
+    /**
+     * Get teamSubjectDetails
+     *
+     * @return \ApiBundle\Entity\Subjects
+     */
+    public function getTeamSubjectDetails()
+    {
+        return $this->TeamSubjectDetails;
+    }
+}

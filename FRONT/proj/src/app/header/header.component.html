@@ -1,0 +1,15 @@
+<mat-toolbar style=" background: linear-gradient(to right, #05056b, #5858fe);" color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <span>
+    TokenProject
+  </span>
+  <span class="fill-remaining-space"></span>
+  <button routerLink="/" mat-button>Accueil</button>
+  <button *ngIf="role == 2" routerLink="/projects" mat-button>Project</button>
+  <button *ngIf="role == 2" routerLink="/students" mat-button>Students</button>
+  <button mat-button>{{email}}</button>
+  <!--button mat-button routerLink="login" *ngIf="!isLoggedIn; else notLoggedIn">Login</button>
+  <ng-template #notLoggedIn>
+    <button mat-button (click)="onLogout()">Logout</button>
+  </ng-template -->
+  <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+</mat-toolbar>

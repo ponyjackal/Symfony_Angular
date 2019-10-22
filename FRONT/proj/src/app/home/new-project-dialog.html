@@ -1,0 +1,52 @@
+<mat-card >
+
+    <form
+        [formGroup]="projectForm"
+        (ngSubmit)="onSubmit()"
+
+        class="example-form" >
+
+        <mat-form-field class="example-full-width" >
+            <input hidden
+                formControlName="userid"
+            >
+
+            <input matInput
+                formControlName="name"
+                placeholder="nom du sujet"
+            >
+
+            <mat-error *ngIf="projectForm.get('name').hasError('required') && projectForm.get('name').touched" >
+                Un nom est requis
+            </mat-error >
+
+            <mat-error *ngIf="projectForm.get('name').hasError('maxlength')" >
+                Le nom doit faire 45 caractères maximum
+            </mat-error >
+
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <textarea matInput
+                formControlName="description"
+                placeholder="description du projet"
+            ></textarea >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <input matInput formControlName="beginat" [matDatepicker]="beginat" placeholder="date de debut du projet" >
+            <mat-datepicker-toggle matSuffix [for]="beginat" ></mat-datepicker-toggle >
+            <mat-datepicker #beginat ></mat-datepicker >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <input matInput formControlName="endat" [matDatepicker]="endat" placeholder="date de fin du projet" >
+            <mat-datepicker-toggle matSuffix [for]="endat" ></mat-datepicker-toggle >
+            <mat-datepicker #endat ></mat-datepicker >
+        </mat-form-field >
+
+        <button mat-button >Enregistrer</button >
+
+    </form >
+
+</mat-card >

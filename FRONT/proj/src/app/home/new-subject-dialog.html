@@ -1,0 +1,44 @@
+<mat-card >
+
+    <form
+        [formGroup]="subjectForm"
+        (ngSubmit)="onSubmit()"
+
+        class="example-form" >
+
+        <input hidden
+            formControlName="userid"
+        >
+
+        <input hidden
+            formControlName="projectid"
+        >
+
+        <mat-form-field class="example-full-width" >
+            <input matInput
+                formControlName="name"
+                placeholder="nom du sujet"
+            >
+
+            <mat-error *ngIf="subjectForm.get('name').hasError('required') && subjectForm.get('name').touched" >
+                Un nom est requis
+            </mat-error >
+
+            <mat-error *ngIf="subjectForm.get('name').hasError('maxlength')" >
+                Le nom doit faire 45 caractères maximum
+            </mat-error >
+
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <textarea matInput
+                formControlName="description"
+                placeholder="description du sujet"
+            ></textarea >
+        </mat-form-field >
+
+        <button mat-button >Enregistrer</button >
+
+    </form >
+
+</mat-card >

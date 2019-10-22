@@ -1,0 +1,150 @@
+<?php
+
+namespace ApiBundle\Entity;
+
+/**
+ * Students_list
+ */
+class Students_list
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     */
+    private $active = 1;
+
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $update_at;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Students_list
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Students_list
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set updateAt
+     *
+     * @param \DateTime $updateAt
+     *
+     * @return Students_list
+     */
+    public function setUpdateAt($updateAt)
+    {
+        $this->update_at = $updateAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updateAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdateAt()
+    {
+        return $this->update_at;
+    }
+
+    public function insertCreatedAtAuto()
+    {
+        $this->setCreatedAt(new \DateTime());
+    }
+
+    public function insertUpdateAtAuto()
+    {
+        $this->setUpdateAt(new \DateTime());
+    }
+    /**
+     * @var \ApiBundle\Entity\Users
+     */
+    private $StudentUser;
+
+
+    /**
+     * Set studentUser
+     *
+     * @param \ApiBundle\Entity\Users $studentUser
+     *
+     * @return Students_list
+     */
+    public function setStudentUser(\ApiBundle\Entity\Users $studentUser = null)
+    {
+        $this->StudentUser = $studentUser;
+
+        return $this;
+    }
+
+    /**
+     * Get studentUser
+     *
+     * @return \ApiBundle\Entity\Users
+     */
+    public function getStudentUser()
+    {
+        return $this->StudentUser;
+    }
+}

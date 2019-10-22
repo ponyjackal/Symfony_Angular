@@ -1,0 +1,37 @@
+ApiBundle\Entity\Users_team:
+    type: entity
+    table: users_team
+    manyToOne:
+      TeamUsers:
+        targetEntity: Users
+        inversedBy: UsersTeam
+        joinColumn:
+            name: student_id
+            referencedColumnName: id
+      TeamsDetails:
+        targetEntity: Team_details
+        inversedBy: TeamUsersDetails
+        joinColumn:
+            name: team_id
+            referencedColumnName: id
+    repositoryClass: ApiBundle\Repository\Users_teamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks:
+        prePersist: [ insertCreatedAtAuto, insertUpdateAtAuto ]
+    fields:
+        active:
+            type: boolean
+            option:
+                defaults: 1
+        created_at:
+            type: datetime
+        update_at:
+            type: datetime
+
+
+

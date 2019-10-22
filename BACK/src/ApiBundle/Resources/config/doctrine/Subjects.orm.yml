@@ -1,0 +1,48 @@
+ApiBundle\Entity\Subjects:
+    type: entity
+    table: subjects
+    manyToOne:
+      SubjectProject:
+        targetEntity: Projects
+        inversedBy: ProjectSubjects
+        joinColumn:
+            name: project_id
+            referencedColumnName: id
+      SubjectUsers:
+        targetEntity: Users
+        inversedBy: UsersSubjects
+        joinColumn:
+            name: created_by
+            referencedColumnName: id
+    oneToMany:
+      SubjectTeamDetails:
+            targetEntity: Subjects_team
+            mappedBy: TeamSubjectDetails
+      SubjectCoatchs:
+            targetEntity: Subjects_coatch
+            mappedBy: CoatchSubjects
+      SubjectTokens:
+            targetEntity: Tokens_transaction
+            mappedBy: TokenSubjects
+    repositoryClass: ApiBundle\Repository\SubjectsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks:
+        prePersist: [ insertCreatedAtAuto, insertUpdateAtAuto ]
+    fields:
+        name:
+            type: string
+        description:
+            type: string
+        active:
+            type: boolean
+            option:
+                defaults: 1
+        created_at:
+            type: datetime
+        update_at:
+            type: datetime

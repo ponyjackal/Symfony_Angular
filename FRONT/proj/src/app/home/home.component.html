@@ -1,0 +1,56 @@
+<mat-card >
+
+    <h2 >Liste des équipes dans lesquel je suis inscris</h2 >
+
+    <mat-accordion >
+        <mat-expansion-panel *ngFor="let team of teams; let i = index" >
+
+            <mat-expansion-panel-header (click)="getTeamDetail(team)" >
+                <mat-panel-title >
+                    {{team.name}}
+                </mat-panel-title >
+                <mat-panel-description *ngIf="team.id" >
+                    jetons restants : {{ team.tokens_credit }}
+                </mat-panel-description >
+            </mat-expansion-panel-header >
+
+            <button *ngIf="team.id" mat-button (click)="pushUser(team)" >ajouter un membre dans l'équipe</button >
+            <button *ngIf="team.id && team.subject" mat-button (click)="sendToken(team)" >dépenser un jeton</button >
+
+            <h2 *ngIf="team.id" >
+                liste des membres de l'équipe
+            </h2 >
+
+            <mat-list role="list" *ngIf="team.users" >
+
+                <mat-list-item role="listitem" *ngFor="let user of team.users; let i = index" >
+                    #{{ i + 1 }} - {{ user.firstname }} {{ user.lastname }}
+                </mat-list-item >
+
+            </mat-list >
+
+        </mat-expansion-panel >
+
+    </mat-accordion >
+
+</mat-card >
+
+<!------------------------------------------------>
+<!------------------------------------------------>
+
+<mat-card >
+
+    <h2 >
+        Liste des projets existants
+
+        <button mat-button (click)="createProject()" >créer un nouveau projet</button >
+    </h2 >
+
+
+    <mat-grid-list cols="4" rowHeight="2:1" >
+        <mat-grid-tile *ngFor="let project of projects" [routerLink]="['/project/'+project.id]" >
+            {{project.name}}
+        </mat-grid-tile >
+    </mat-grid-list >
+
+</mat-card >

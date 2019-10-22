@@ -1,0 +1,35 @@
+ApiBundle\Entity\Team_details:
+    type: entity
+    table: team_details
+    oneToMany:
+      TeamUsersDetails:
+            targetEntity: Users_team
+            mappedBy: TeamsDetails
+      TeamSubject:
+            targetEntity: Subjects_team
+            mappedBy: SubjectTeam
+      TeamTokens:
+            targetEntity: Tokens_transaction
+            mappedBy: TokenTeams
+    repositoryClass: ApiBundle\Repository\Team_detailsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks:
+        prePersist: [ insertCreatedAtAuto, insertUpdateAtAuto ]
+    fields:
+        name:
+            type: string
+        tokens_credit:
+            type: integer
+        active:
+            type: boolean
+            option:
+                defaults: 1
+        created_at:
+            type: datetime
+        update_at:
+            type: datetime

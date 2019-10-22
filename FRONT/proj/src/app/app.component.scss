@@ -1,0 +1,110 @@
+/* everywhere else */
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    margin: 2em;
+}
+
+body, input[text], button
+{
+    color: #888888;
+    font-family: Cambria, Georgia, serif;
+}
+
+h1
+{
+    color: #336699;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+h2, h3
+{
+    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+.example-form
+{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width
+{
+    width: 100%;
+}
+
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+/* studentsComponent's private CSS styles */
+.selected
+{
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+.students
+{
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}
+
+.students li
+{
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEEEEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+}
+
+.students li.selected:hover
+{
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.students li:hover
+{
+    color: #607D8B;
+    background-color: #DDDDDD;
+    left: .1em;
+}
+
+.students .text
+{
+    position: relative;
+    top: -3px;
+}
+
+.students .badge
+{
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+}

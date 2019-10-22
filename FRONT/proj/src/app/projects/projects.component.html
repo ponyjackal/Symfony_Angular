@@ -1,0 +1,13 @@
+<mat-card >
+
+  <h2 >Tout les projets</h2 >
+
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let project of projects" [routerLink]="['/project/'+project.id]">
+      {{project.name}}
+        <button mat-button>delete</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</mat-card >

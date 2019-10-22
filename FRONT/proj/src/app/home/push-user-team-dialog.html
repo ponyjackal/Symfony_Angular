@@ -1,0 +1,27 @@
+<mat-card >
+
+    <form
+        [formGroup]="teamForm"
+        (ngSubmit)="onSubmit()"
+
+        class="example-form" >
+
+        <input hidden
+            formControlName="teamid"
+        >
+
+        <mat-form-field class="example-full-width" >
+            <mat-select
+                formControlName="user"
+                placeholder="membre 3" >
+                <mat-option *ngFor="let student of data.studentsList" [(value)]="student.id" >
+                    {{ student.firstname }} {{ student.lastname }}
+                </mat-option >
+            </mat-select >
+        </mat-form-field >
+
+        <button mat-button >Enregistrer</button >
+
+    </form >
+
+</mat-card >

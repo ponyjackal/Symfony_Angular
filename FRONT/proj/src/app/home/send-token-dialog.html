@@ -1,0 +1,44 @@
+<mat-card >
+
+    <form
+        [formGroup]="tokenForm"
+        (ngSubmit)="onSubmit()"
+
+        class="example-form" >
+
+        <input hidden
+            formControlName="teamid"
+        >
+
+        <input hidden
+            formControlName="subjectid"
+        >
+
+        <mat-form-field class="example-full-width" >
+            <mat-select
+                formControlName="coach"
+                placeholder="coach à qui envoyé les jetons" >
+                <mat-option *ngFor="let coach of data.coachslist" [(value)]="coach.id" >
+                    {{ coach.firstname }} {{ coach.lastname }}
+                </mat-option >
+            </mat-select >
+        </mat-form-field >
+
+        <mat-form-field class="example-full-width" >
+            <input matInput
+                type="number"
+                formControlName="token"
+                placeholder="nombre de jeton"
+            >
+
+            <mat-error *ngIf="tokenForm.get('token').hasError('required') && tokenForm.get('token').touched" >
+                Un nombre est requis
+            </mat-error >
+
+        </mat-form-field >
+
+        <button mat-button >Enregistrer</button >
+
+    </form >
+
+</mat-card >

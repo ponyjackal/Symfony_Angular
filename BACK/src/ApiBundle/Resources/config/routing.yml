@@ -1,0 +1,79 @@
+api_user_connect:
+    path:     /user/connect
+    defaults: { _controller: ApiBundle:Users:getConnect }
+    methods:    [POST]
+
+api_user_project:
+    path:     /user/project/{user_id}
+    defaults: { _controller: ApiBundle:Users:getProjectByUser }
+    methods:    [GET]
+
+api_user_team:
+    path:     /user/team/{user_id}
+    defaults: { _controller: ApiBundle:Users:getUserTeam }
+    methods:    [GET]
+
+api_user_not_team:
+    path:     /user/not/team/{team_id}
+    defaults: { _controller: ApiBundle:Users:getUserNotInTeam }
+    methods:    [GET]
+
+api_team_all:
+    path:     /teams/all
+    defaults: { _controller: ApiBundle:Teams:getTeams }
+    methods:    [GET]
+
+api_team_users:
+    path:     /team/users/{team_id}
+    defaults: { _controller: ApiBundle:Teams:getUsersByTeam }
+    methods:    [GET]
+
+api_team_one:
+    path:     /team/{team_id}
+    defaults: { _controller: ApiBundle:Teams:getOneTeam }
+    methods:    [GET]
+
+api_add_to_team:
+    path:     /add/to/team
+    defaults: { _controller: ApiBundle:Users:addToTeam }
+    methods:    [PUT]
+
+api_subject_one:
+    path:     /subject/{subject_id}
+    defaults: { _controller: ApiBundle:Subjects:getSubject }
+    methods:    [GET]
+
+api_subject_create:
+    path:     /subject/add
+    defaults: { _controller: ApiBundle:Subjects:addSubject }
+    methods:    [PUT]
+
+api_subject_team:
+    path:     /subject/team/{team_id}
+    defaults: { _controller: ApiBundle:Subjects:getSubjectByTeam }
+    methods:    [GET]
+
+api_projects_all:
+    path:     /projects/all
+    defaults: { _controller: ApiBundle:Projects:getProjectsList }
+    methods:    [GET]
+
+api_subject_coatch:
+    path:     /subject/coatchs/{subject_id}
+    defaults: { _controller: ApiBundle:Subjects:getCoatchBySubjectId }
+    methods:    [GET]
+
+api_project_one:
+    path:     /project/{project_id}
+    defaults: { _controller: ApiBundle:Projects:getSubjectByProject }
+    methods:    [GET]
+
+api_project_add:
+    path:     /project/add
+    defaults: { _controller: ApiBundle:Projects:addProject }
+    methods:    [PUT]
+
+api_tokens_transaction:
+    path:     /tokens/transaction
+    defaults: { _controller: ApiBundle:Tokens:TransactionToken }
+    methods:    [PUT]

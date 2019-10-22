@@ -1,0 +1,26 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>La connexion via Office365 est privilégié</p>
+       <!-- <mat-input-container class="full-width-input">
+          <input matInput placeholder="User"
+                 formControlName="userName" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Please inform your user name
+          </mat-error>
+        </mat-input-container>
+        <mat-input-container class="full-width-input">
+          <input matInput type="password" placeholder="Password"
+                 formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Please inform your password
+          </mat-error>
+        </mat-input-container>-->
+        <button mat-raised-button color="primary" type="submit">Connexion</button>
+      </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
